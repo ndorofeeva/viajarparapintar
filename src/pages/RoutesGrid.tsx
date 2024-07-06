@@ -1,5 +1,5 @@
-import RouteCard from './RouteCard';
-import Route from '../../models/Route';
+import RouteCard from '../components/Routes/RouteCard';
+import Route from '../models/Route';
 import Pagination from '@mui/material/Pagination';
 import { useState } from 'react';
 
