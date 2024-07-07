@@ -1,10 +1,9 @@
-import RouteCard from '../components/Routes/RouteCard';
-import Route from '../models/Route';
+import RouteCard from './RouteCard';
+import Route from '../../models/Route';
 import Pagination from '@mui/material/Pagination';
 import { useState } from 'react';
 
 const CARDS_PER_PAGE = 3;
-//TODO: request data from server
 const routesData: Route[] = [
   {
     id: 1,
@@ -109,7 +108,7 @@ const routesData: Route[] = [
 ];
 const numberOfPages = Math.ceil(routesData.length/CARDS_PER_PAGE);
 
-const Routes = () => {
+const RoutesGrid = () => {
   const [filteredRoutes, setFilteredRoutes] = useState(routesData.slice(0,CARDS_PER_PAGE));
 
   const handleChangePage = (event: React.ChangeEvent<unknown>, page: number) =>
@@ -130,4 +129,4 @@ const Routes = () => {
   );
 };
 
-export default Routes;
+export default RoutesGrid;
