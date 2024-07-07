@@ -115,11 +115,6 @@ a:active {
   --tw-contain-style:  ;
 }
 
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
-}
-
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -160,6 +155,10 @@ a:active {
 
 .text-center {
   text-align: center;
+}
+
+.text-end {
+  text-align: end;
 }
 
 .logo-custom {
