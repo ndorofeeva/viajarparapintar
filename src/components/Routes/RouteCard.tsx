@@ -1,7 +1,7 @@
-import Route from '../../models/Route';
+import IRoute from '../../models/route';
 
 type RouteProps = {
-  route: Route;
+  route: IRoute;
 };
 
 const RouteCard = ({ route }: RouteProps) => (

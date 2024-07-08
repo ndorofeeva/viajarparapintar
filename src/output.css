@@ -161,6 +161,10 @@ a:active {
   text-align: end;
 }
 
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .logo-custom {
   font-family: 'Inria Serif';
   font-size: 2rem;
