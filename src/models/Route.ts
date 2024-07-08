@@ -32,9 +32,3 @@ export enum DifficultyEnum {
   'Moderate' = 2,
   'High' = 3
 }
-
-export enum DifficultyImgEnum {
-  'Low' = 'difficulty-low.png',
-  'Moderate' = 'difficulty-moderate.png',
-  'High' = 'difficulty-high.png',
-}
