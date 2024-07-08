@@ -53,7 +53,7 @@ function getFilteredRoutes(newPage?: number, changedFilters?: IFilters) {
       <h3 className="text-center">
         Explore the routes for your next adventure
       </h3>
-      <section id="filters">
+      <section id="filters" className="pb-5">
         <Filters onchange={handleFiltersChange} filterOptions={filterOptions} />
       </section>
       <RoutesGrid filteredRoutes={routes} />
