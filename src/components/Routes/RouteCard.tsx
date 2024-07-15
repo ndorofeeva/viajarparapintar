@@ -1,4 +1,3 @@
-import Box from "@mui/material/Box";
 import IRoute, { DifficultyEnum } from "../../models/route";
 
 type RouteProps = {
