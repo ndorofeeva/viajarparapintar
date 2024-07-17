@@ -206,6 +206,10 @@ a:active {
   padding-bottom: 1.25rem;
 }
 
+.pr-5 {
+  padding-right: 1.25rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -217,10 +221,6 @@ a:active {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.opacity-50 {
-  opacity: 0.5;
 }
 
 .opacity-30 {

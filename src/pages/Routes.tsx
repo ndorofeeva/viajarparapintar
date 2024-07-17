@@ -3,10 +3,10 @@ import Pagination from "@mui/material/Pagination";
 import RoutesGrid from "../components/Routes/RoutesGrid";
 import Filters from "../components/Routes/Filters";
 import RoutesData, { Countries } from "../models/routesData"; //TODO: get from server
-import IRoute, { IFilterOptions, IFilters } from "../models/route";
+import IRoute, { IFilterOptions, IFilters, RouteTypeEnum } from "../models/route";
 
 const CARDS_PER_PAGE = 3;
-const filtersState: IFilters = {};
+const filtersState: IFilters = { type: RouteTypeEnum.Bike };
 const filterOptions: IFilterOptions = {  //TODO: get from server
   countries: Countries,
   minDays: 1,
@@ -53,8 +53,8 @@ function getFilteredRoutes(newPage?: number, changedFilters?: IFilters) {
       <h3 className="text-center">
         Explore the routes for your next adventure
       </h3>
-      <section id="filters" className="pb-5">
-        <Filters onchange={handleFiltersChange} filterOptions={filterOptions} />
+      <section id="filters" className="flex pb-5">
+        <Filters onchange={handleFiltersChange} filterOptions={filterOptions} filterState={filters} />
       </section>
       <RoutesGrid filteredRoutes={routes} />
       <div className="flex justify-center mt-5">
@@ -86,9 +86,9 @@ function isFiltersEmpty (filters: IFilters) {
 function isRouteApplicable(route: IRoute, filters: IFilters) {
   let condition = true;
     if (
-      (filters.countries && !filters.countries.includes(route.country)) ||
+      (filters.countries && filters.countries.length > 0 && !filters.countries.includes(route.country)) ||
       (filters.difficulty && filters.difficulty !== route.difficulty) ||
-      (filters.duration && filters.duration !== route.duration)
+      (filters.type !== route.type)
     )
       condition = false;
     return condition;
