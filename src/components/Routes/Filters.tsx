@@ -51,7 +51,7 @@ const Filters = ({onchange, filterOptions, filterState}: IProps) => {
         aria-label="Platform"
       >
         {Object.keys(RouteTypeEnum).map(type => (
-          <ToggleButton value={type}>{type}</ToggleButton>
+          <ToggleButton key={type} value={type}>{type}</ToggleButton>
         ))}
       </ToggleButtonGroup>
     </>

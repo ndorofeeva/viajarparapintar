@@ -6,7 +6,7 @@ export default interface IRoute {
   type: string,
   difficulty: string,
   country: string,
-  image: string,
+  imagename: string,
 }
 
 export interface IFilters {
@@ -18,8 +18,6 @@ export interface IFilters {
 
 export interface IFilterOptions {
   countries: string[];
-  minDays: number;
-  maxDays: number;
 }
 
 export enum RouteTypeEnum {

@@ -20,7 +20,7 @@ const RouteCard = ({ route }: RouteProps) => {
   <div className="bg-slate-50">
     <div className="h-60 relative ">
       <img
-        src={route.image}
+        src={`pictures/${route.imagename}`}
         alt={route.name}
         width="100%"
         className="object-cover max-h-[100%]"
