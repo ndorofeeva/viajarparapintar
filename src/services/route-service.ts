@@ -1,5 +1,5 @@
 import http from './api'
-import IRoute, {IFilters} from '../models/route'
+import IRoute, {IFilters, IRouteData} from '../models/route'
 import { AxiosResponse } from 'axios';
 
 class RouteService {
@@ -8,7 +8,7 @@ class RouteService {
     return response.data;
   }
 
-  async getAllWithFilter(filters: IFilters): Promise<IRoute[]> {
+  async getAllWithFilter(filters: IFilters): Promise<IRouteData> {
     let query = '/api/routes';
     const queryConditions: string[] = [];
 
@@ -19,8 +19,14 @@ class RouteService {
 
     if(queryConditions.length > 0) query = `${query}?${queryConditions.join('&')}`;
 
-    console.log(query);
-    const response: AxiosResponse<IRoute[], never> = await http.get(query);
+    query = `${query}&page=${filters.page}&itemsPerPage=${filters.itemsPerPage}`;
+
+    const response: AxiosResponse<IRouteData, never> = await http.get(query);
+    return response.data;
+  }
+
+  async getCountries(): Promise<string[]> {
+    const response: AxiosResponse<string[], never> = await http.get('/api/routes/countries');
     return response.data;
   }
 }

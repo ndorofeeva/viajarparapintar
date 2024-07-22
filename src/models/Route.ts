@@ -9,11 +9,18 @@ export default interface IRoute {
   imagename: string,
 }
 
+export interface IRouteData {
+  routes: IRoute[];
+  numberOfPages: number;
+}
+
 export interface IFilters {
   countries?: string[];
   difficulty?: DifficultyEnum;
   duration?: number;
-  type: RouteTypeEnum; 
+  type?: RouteTypeEnum;
+  page: number;
+  itemsPerPage: number;
 }
 
 export interface IFilterOptions {
