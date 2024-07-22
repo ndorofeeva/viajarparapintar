@@ -21,12 +21,12 @@ const RouteCard = ({ route }: RouteProps) => {
     <div className="h-60 relative ">
       <img
         src={`pictures/${route.imagename}`}
-        alt={route.name}
+        alt={route.title}
         width="100%"
         className="object-cover max-h-[100%]"
       />
       <span className="bg-stone-800/75 text-white px-5 absolute bottom-0 left-0">
-        {route.distance}
+        {route.distance} km
       </span>
       <span className="bg-stone-800/75 text-white px-5 absolute bottom-0 right-0">
         {route.duration} days
@@ -34,10 +34,10 @@ const RouteCard = ({ route }: RouteProps) => {
     </div>
     <div className="px-5">
       <h3
-        title={route.name}
+        title={route.title}
         className="whitespace-nowrap overflow-hidden text-ellipsis text-center"
       >
-        {route.name}
+        {route.title}
       </h3>
       <p className="text-center">Type: {route.type}</p>
       <p className="text-center">

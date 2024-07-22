@@ -1,6 +1,6 @@
 export default interface IRoute {
   id: number,
-  name: string,
+  title: string,
   distance: string,
   duration: number,
   type: string,

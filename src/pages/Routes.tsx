@@ -5,7 +5,7 @@ import Filters from "../components/Routes/Filters";
 import RouteService from '../services/route-service';
 import IRoute, { IFilterOptions, IFilters, RouteTypeEnum } from "../models/route";
 
-const CARDS_PER_PAGE = 3;
+const CARDS_PER_PAGE = 6;
 const filtersState: IFilters = { type: RouteTypeEnum.Bike };
 
 const RoutesPage = () => {
@@ -27,10 +27,8 @@ const RoutesPage = () => {
   );
 
   const handleFiltersChange = (changedFilters: IFilters) => {
-    console.log(changedFilters);
     setFilters(changedFilters);
     RouteService.getAllWithFilter(changedFilters).then(response => {
-      console.log(response);
       setPage(1);
       setRoutes(getPaginated(page, response)); //TODO: pagination from server
       setNumberOfPages(getNumberOfPages(response.length));
