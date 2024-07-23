@@ -6,7 +6,13 @@ export default interface IRoute {
   type: string,
   difficulty: string,
   country: string,
-  imagename: string,
+  previewImage: string,
+}
+
+export interface IRouteDetails extends IRoute {
+  highlightedText: string,
+  mainText: string,
+  photos: string[]
 }
 
 export interface IRouteData {

@@ -1,5 +1,5 @@
 import http from './api'
-import IRoute, {IFilters, IRouteData} from '../models/route'
+import IRoute, {IFilters, IRouteData, IRouteDetails} from '../models/route'
 import { AxiosResponse } from 'axios';
 
 class RouteService {
@@ -27,6 +27,11 @@ class RouteService {
 
   async getCountries(): Promise<string[]> {
     const response: AxiosResponse<string[], never> = await http.get('/api/routes/countries');
+    return response.data;
+  }
+
+  async get(id: string): Promise<IRouteDetails> {
+    const response: AxiosResponse<IRouteDetails, never> = await http.get(`/api/routes/details/${id}`);
     return response.data;
   }
 }

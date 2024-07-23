@@ -155,8 +155,16 @@ a:active {
   height: 15rem;
 }
 
+.h-80 {
+  height: 20rem;
+}
+
 .max-h-\[100\%\] {
   max-height: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .grid-cols-3 {
@@ -169,6 +177,10 @@ a:active {
 
 .gap-5 {
   gap: 1.25rem;
+}
+
+.overflow-auto {
+  overflow: auto;
 }
 
 .overflow-hidden {
@@ -210,6 +222,14 @@ a:active {
   padding-right: 1.25rem;
 }
 
+.pr-2 {
+  padding-right: 0.5rem;
+}
+
+.pr-1 {
+  padding-right: 0.25rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -225,10 +245,6 @@ a:active {
 
 .opacity-30 {
   opacity: 0.3;
-}
-
-.filter {
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .logo-custom {

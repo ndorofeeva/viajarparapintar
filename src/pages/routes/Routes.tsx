@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import Pagination from "@mui/material/Pagination";
-import RoutesGrid from "../components/Routes/RoutesGrid";
-import Filters from "../components/Routes/Filters";
-import RouteService from '../services/route-service';
-import IRoute, { IFilterOptions, IFilters, RouteTypeEnum } from "../models/route";
+import RoutesGrid from "../../components/Routes/RoutesGrid";
+import Filters from "../../components/Routes/Filters";
+import RouteService from '../../services/route-service';
+import IRoute, { IFilterOptions, IFilters, RouteTypeEnum } from "../../models/route";
 
 const CARDS_PER_PAGE = 6;
 
