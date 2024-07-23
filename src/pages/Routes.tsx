@@ -12,7 +12,7 @@ const RoutesPage = () => {
   const [filters, setFilters] = useState<IFilters>({page: 1, itemsPerPage: CARDS_PER_PAGE, type: RouteTypeEnum.Bike});
   const [filterOptions, setFilterOptions] = useState<IFilterOptions>({countries: []});
   const [numberOfPages, setNumberOfPages] = useState(0);
-  const [page, setPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
   
   useEffect(
     () => {
@@ -29,7 +29,7 @@ const RoutesPage = () => {
 
   const handleFiltersChange = (changedFilters: IFilters) => {
     setFilters(changedFilters);
-    setPage(1);
+    setCurrentPage(1);
     const requestParams: IFilters = {...changedFilters, page: 1, itemsPerPage: CARDS_PER_PAGE};
     RouteService.getAllWithFilter(requestParams).then(response => {
       setRoutes(response.routes);
@@ -41,7 +41,7 @@ const RoutesPage = () => {
     event: React.ChangeEvent<unknown>,
     page: number
   ) => {
-    setPage(page);
+    setCurrentPage(page);
     const requestParams: IFilters = {...filters, page: page, itemsPerPage: CARDS_PER_PAGE};
     RouteService.getAllWithFilter(requestParams).then(response => {
       setRoutes(response.routes);
@@ -61,7 +61,7 @@ const RoutesPage = () => {
       <div className="flex justify-center mt-5">
         <Pagination
           count={numberOfPages}
-          page={page}
+          page={currentPage}
           color="primary"
           onChange={handlePageChange}
         />

@@ -15,7 +15,8 @@ const Filters = ({onchange, filterOptions, filterState}: IProps) => {
     onchange({...filterState, countries: countries});
   }
   const handleDifficultyChange = (e: React.SyntheticEvent, difficulty: string | null) => {
-    onchange({...filterState, difficulty: difficulty ? DifficultyEnum[difficulty as keyof typeof DifficultyEnum] : undefined});
+    const difficultyValue = difficulty ? DifficultyEnum[difficulty as keyof typeof DifficultyEnum] : undefined;
+    onchange({...filterState, difficulty: difficultyValue});
   }
   const handleTypeChange = (e: React.SyntheticEvent, type: string) => {
     if(type != null) 
